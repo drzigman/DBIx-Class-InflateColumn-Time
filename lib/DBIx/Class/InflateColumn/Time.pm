@@ -21,9 +21,6 @@ DBIx::Class::InflateColumn::Time - Inflate and Deflate "time" columns into DateT
 
 =head1 SYNOPSIS
 
-This module can be used to automagically inflate database columns of data type "time" into
-DateTime::Duration objects.  It is used similiar to other InflateColumn DBIx modules.
-
     package HorseTrack::Database::Schema::Result::Race;
     use base 'DBIx::Class::Core';
 
@@ -36,6 +33,11 @@ DateTime::Duration objects.  It is used similiar to other InflateColumn DBIx mod
         race_number => { data_type => 'integer'},
         duration    => { data_type => 'time'},
     );
+
+=head1 DESCRIPTION
+
+This module can be used to automagically inflate database columns of data type "time" into
+DateTime::Duration objects.  It is used similiar to other InflateColumn DBIx modules.
 
 Once your Result is properly defined you can now pass DateTime::Duration objects into columns
 of data_type time and retrieve DateTime::Duration objects from these columns as well
