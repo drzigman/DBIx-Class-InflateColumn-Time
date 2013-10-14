@@ -112,7 +112,7 @@ sub register_column {
 }
 
 sub _inflate {
-    my ($value, $object) = @_;
+    my $value = shift;
 
     my ($sign, $hours, $minutes, $seconds) = $value =~ m/(-?)0?(\d+):0?(\d+):0?(\d+)/g;
 
@@ -135,7 +135,7 @@ sub _inflate {
 }
 
 sub _deflate {
-    my ($value, $object) = @_;
+    my $value = shift;
 
     # For time purposes we'll always assume that a day is 24 hours.
     my $hours = $value->hours + ($value->days * 24);
